@@ -1,5 +1,5 @@
 const CONFIG = {
-  messengerLink: "https://m.me/YOUR_PAGE_USERNAME", // PLACEHOLDER: replace with the owner's Messenger link
+  messengerLink: "https://m.me/61576305416219", // PLACEHOLDER: replace with the owner's Messenger link
   gcashNumber: "09XX XXX XXXX", // PLACEHOLDER: replace with the owner's GCash number
   gcashName: "ACCOUNT NAME", // PLACEHOLDER: replace with the GCash account name
   deliveryNote: "Delivery fee depends on your location and is confirmed in chat." // PLACEHOLDER: replace with the owner's real delivery fees
