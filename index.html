@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C &amp; T Fuzzy Blooms</title>
+<meta name="description" content="Handmade fuzzy wire bouquets and keychains from Mandaluyong City.">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="mark" href="#top">C &amp; T Fuzzy Blooms</a>
+    <nav aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#custom">Custom</a>
+      <a href="#order">Order</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <h1>Fuzzy blooms that never fade</h1>
+        <p>Handmade fuzzy wire bouquets and keychains from Addition Hills, Mandaluyong City. Pick a ready-made piece or build your own, then send your order in one go.</p>
+        <div class="cta">
+          <a class="btn" href="#shop">Browse the shop</a>
+          <a class="btn ghost" href="#custom">Build a custom bouquet</a>
+        </div>
+        <ul class="chips">
+          <li>100% handmade</li>
+          <li>Student-friendly prices</li>
+          <li>Ready in 1 to 4 days or more</li>
+        </ul>
+      </div>
+      <figure class="hero-pic">
+        <img src="images/b-480.jpg" alt="Purple tulip and lily fuzzy wire bouquet in a pink wrapper" width="600" height="750">
+      </figure>
+    </div>
+  </section>
+
+  <section id="shop">
+    <div class="wrap">
+      <div class="head">
+        <h2>Shop</h2>
+        <p>Prices are in pesos. Tap a photo to see it larger.</p>
+      </div>
+      <div class="tabs" id="tabs" role="group" aria-label="Filter products">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="bouquet" aria-pressed="false">Bouquets</button>
+        <button type="button" data-f="keychain" aria-pressed="false">Keychains</button>
+      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="custom" class="tint">
+    <div class="wrap">
+      <div class="head">
+        <h2>Build a custom bouquet</h2>
+        <p>Choose how many of each flower and leaf you want. Items marked Not available cannot be ordered right now.</p>
+      </div>
+      <div class="calc">
+        <div class="panel">
+          <h3>Flowers</h3>
+          <div class="list" id="flowers"></div>
+          <h3>Leaves</h3>
+          <div class="list" id="leaves"></div>
+        </div>
+        <aside class="panel sticky" aria-live="polite">
+          <h3>Your estimate</h3>
+          <div class="amt" id="est">₱0</div>
+          <ul class="lines" id="estLines"></ul>
+          <p class="small">Flowers and leaves only. Wrapper, ribbon, and delivery are confirmed with you in chat.</p>
+          <button class="btn" id="addCustom" type="button">Add to my order</button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap narrow">
+      <div class="head">
+        <h2>Send your order</h2>
+        <p>Fill this in and we will open Messenger with your order ready to send.</p>
+      </div>
+      <div class="panel">
+        <h3>Your items</h3>
+        <ul class="lines" id="cartList"></ul>
+        <div class="tot"><span>Estimated total</span><strong id="cartTot">₱0</strong></div>
+      </div>
+      <form class="panel" id="orderForm">
+        <div class="two">
+          <div class="field"><label for="name">Full name</label><input type="text" id="name" required autocomplete="name"></div>
+          <div class="field"><label for="phone">Contact number</label><input type="tel" id="phone" required autocomplete="tel" inputmode="tel" placeholder="09XX XXX XXXX"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="addr">Delivery address</label><input type="text" id="addr" required autocomplete="street-address"></div>
+          <div class="field"><label for="social">Facebook or TikTok name (optional)</label><input type="text" id="social"></div>
+        </div>
+        <div class="field">
+          <label for="ful">How will you get your order?</label>
+          <select id="ful">
+            <option>Pickup in Addition Hills, Mandaluyong City</option>
+            <option>Meet-up</option>
+            <option>Delivery by my preferred courier</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" rows="3" placeholder="Flower or keychain colors, wrapper and ribbon colors, card message"></textarea>
+        </div>
+        <div class="rules">
+          <h3>Before you send</h3>
+          <ul>
+            <li>Orders take 1 to 4 days, or more depending on the design and materials.</li>
+            <li>We ask for the full payment or a 50% downpayment first. Downpayments are non-refundable.</li>
+            <li>No cancellation of orders.</li>
+            <li>Pay by GCash: <strong id="gcNum"></strong> (<span id="gcName"></span>). Send your receipt screenshot in Messenger after we confirm your order.</li>
+            <li id="delNote"></li>
+          </ul>
+        </div>
+        <label class="check"><input type="checkbox" id="consent" required> I agree that my name, contact number, and address will be used only to process this order (Data Privacy Act of 2012).</label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit">Prepare my order</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="gallery" class="tint">
+    <div class="wrap">
+      <div class="head">
+        <h2>Gallery</h2>
+        <p>A look at our handmade work.</p>
+      </div>
+      <div class="gal" id="gal"></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap narrow">
+      <div class="head"><h2>Questions we get a lot</h2></div>
+      <div id="faqList"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img src="images/logo.jpg" alt="C &amp; T Fuzzy Blooms logo" width="300" height="154" loading="lazy">
+    <p><a href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener">Facebook</a> <!-- PLACEHOLDER: replace with the owner's Facebook page link --> <a href="https://www.tiktok.com/@fuzzybloom06" target="_blank" rel="noopener">TikTok</a></p>
+    <p>Your details are used only to prepare your order. This site does not store them.</p>
+    <p>© 2026 C &amp; T Fuzzy Blooms. Built for a TIP Manila project proposal.</p>
+  </div>
+</footer>
+
+<a class="pill" id="pill" href="#order" hidden></a>
+
+<dialog id="doneDlg" aria-labelledby="doneT">
+  <h2 id="doneT">Your order is ready to send</h2>
+  <p>Open Messenger, paste your order into the chat, and send it. Wait for our confirmation before you pay.</p>
+  <textarea id="sum" rows="10" readonly aria-label="Order summary"></textarea>
+  <div class="cta">
+    <button class="btn" id="copyBtn" type="button">Copy order</button>
+    <a class="btn ghost" id="msgBtn" target="_blank" rel="noopener">Open Messenger</a>
+    <button class="btn ghost" id="closeBtn" type="button">Close</button>
+  </div>
+</dialog>
+
+<dialog id="zoom" aria-label="Photo">
+  <img id="zimg" alt="">
+  <button class="btn sm" id="zclose" type="button">Close</button>
+</dialog>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
