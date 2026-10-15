@@ -19,6 +19,7 @@ Everything is in the `images` folder.
 - `b-` photos are bouquets, for example `b-480.jpg` (the number is only a label, not the price)
 - `k-` photos are keychains, for example `k-rose.jpg`
 - `logo.jpg` is the logo, also used as the browser tab icon
+- `picks.jpg` holds the small flower and leaf pictures in the custom bouquet builder. They follow the order of `FLOWERS` and `LEAVES` in `js/data.js`, so a new flower or leaf also needs a new spot in this image
 
 Photos should be about 600 x 750 pixels (4:5, portrait) and under 150 KB so the site loads fast on mobile data.
 
