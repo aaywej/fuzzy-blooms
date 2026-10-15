@@ -71,7 +71,10 @@ nav a:hover{color:var(--accent)}
 .calc .panel{margin-bottom:0}
 .list{display:grid;gap:.4rem;margin-bottom:1.2rem}
 .item{display:flex;align-items:center;justify-content:space-between;gap:.75rem;border-bottom:1px dashed var(--line);padding:.45rem 0}
-.item>div:first-child{display:flex;flex-direction:column}
+.who{display:flex;align-items:center;gap:.7rem;min-width:0}
+.nm{display:flex;flex-direction:column}
+.thumb{width:56px;height:56px;flex:none;border-radius:50%;background:#fff url(../images/picks.jpg) no-repeat;background-size:280px 280px;box-shadow:0 0 0 2px var(--petal)}
+.item.off .thumb{filter:grayscale(1);opacity:.45}
 .item.off strong{color:var(--mute);text-decoration:line-through}
 .step{display:flex;align-items:center;gap:.4rem}
 .step button{width:2.4rem;height:2.4rem;border-radius:50%;border:2px solid var(--petal);background:#fff;font:800 1.2rem Nunito,sans-serif;color:var(--accent-d);cursor:pointer}

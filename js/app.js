@@ -25,11 +25,16 @@ function renderShop() {
     </article>`).join("");
 }
 
+function thumbPos(k) {
+  const n = PICKABLE.findIndex((x) => x.k === k);
+  return `background-position:-${(n % 5) * 56}px -${Math.floor(n / 5) * 56}px`;
+}
+
 function renderPicker(target, items, prefix) {
   $(target).innerHTML = items.map((i) => {
     const k = prefix + i.id;
     return `<div class="item${i.available ? "" : " off"}">
-      <div><strong>${i.name}</strong>${i.available ? `<span class="small">${peso(i.price)} each</span>` : ""}</div>
+      <div class="who"><span class="thumb" style="${thumbPos(k)}" aria-hidden="true"></span><div class="nm"><strong>${i.name}</strong>${i.available ? `<span class="small">${peso(i.price)} each</span>` : ""}</div></div>
       ${i.available
         ? `<div class="step"><button type="button" data-k="${k}" data-d="-1" aria-label="Fewer ${i.name}">−</button><output id="q-${k}">0</output><button type="button" data-k="${k}" data-d="1" aria-label="More ${i.name}">+</button></div>`
         : `<span class="badge">Not available</span>`}
