@@ -132,6 +132,15 @@ $("#addCustom").addEventListener("click", (e) => {
   flash(e.currentTarget, "Added to your order");
 });
 
+function checkPhone(raw) {
+  const digits = raw.replace(/\D/g, "");
+  if (!/^(09\d{9}|639\d{9})$/.test(digits))
+  {
+    throw new error("Please enter a valid mobile number, for example 0917 123 4567.");
+  }
+  return digits;
+}
+
 function copyText(text) {
   if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
 }
@@ -144,6 +153,13 @@ $("#orderForm").addEventListener("submit", (e) => {
   }
   $("#err").textContent = "";
   const v = (id) => $(id).value.trim();
+  try {
+    checkPhone(v("#phone"));
+  } catch (err) {
+    $("#err").textContent = err.message;
+    $("#phone").focus();
+    return;
+  }
   const ref = "CTF-" + Date.now().toString(36).toUpperCase().slice(-5);
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const items = cart.map((i) => `- ${i.name}${i.detail ? ` (${i.detail})` : ""} x${i.qty} = ${peso(i.price * i.qty)}`);
