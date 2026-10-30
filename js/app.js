@@ -134,9 +134,8 @@ $("#addCustom").addEventListener("click", (e) => {
 
 function checkPhone(raw) {
   const digits = raw.replace(/\D/g, "");
-  if (!/^(09\d{9}|639\d{9})$/.test(digits))
-  {
-    throw new error("Please enter a valid mobile number, for example 0917 123 4567.");
+  if (!/^(09\d{9}|639\d{9})$/.test(digits)) {
+    throw new Error("Please enter a valid mobile number, for example 0917 123 4567.");
   }
   return digits;
 }
